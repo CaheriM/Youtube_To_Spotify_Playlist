@@ -4,6 +4,12 @@
 # Step 4: Search For Song
 # Step 5: Add Song Into New Spotify Playlist
 
+# Youtube Data API
+# Spotify Web API
+# Youtube DL Library
+
+import json
+import requests
 
 class CreatePlaylist:
 
@@ -20,7 +26,13 @@ class CreatePlaylist:
 
     # Step 3: Create New Playlist
     def create_playlist(self):
-        pass
+        request_body = json.dumps({
+            "name": "Youtube Liked Videos",
+            "description": "All Youtube Liked Videos",
+            "public": True
+        })
+
+        print(request_body)
 
     # Step 4: Search For Song
     def get_spotify_url(self):
@@ -30,3 +42,7 @@ class CreatePlaylist:
     def add_song_to_playlist(self):
         pass
 
+
+test = CreatePlaylist()
+test.create_playlist()
+print(requests)
