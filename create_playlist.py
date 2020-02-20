@@ -14,7 +14,7 @@ class CreatePlaylist:
     def get_youtube_client(self):
         pass
 
-    # Step 2: Grab Our Liked Videos
+    # Step 2: Grab User Liked Videos
     def get_liked_videos(self):
         pass
 
