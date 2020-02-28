@@ -1,0 +1,5 @@
+
+spotify_token = "BQCUecueJFvzT2Lq0Nf7Dp-MDY03gOXSIZj9w52biOSiHVswkyeVsLlYdEntClycrPoJcYPEkxiF7LyRU1wC7kUFr_izDRLCWEVt0705SCZA7eod5dxjStD_AYvd18dPTI9qQh-xUN5wyFg_MAoMCJTdNE9hRwQ9NG23CM4Ui2aH30VoTC7d6Q"
+spotify_user_id = "caheri.martinez"
+
+
