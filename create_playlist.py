@@ -10,7 +10,12 @@
 
 import json
 import requests
+import os
+
 from secrets import spotify_user_id, spotify_token
+import google_auth_oauthlib.flow
+import googleapiclient.discovery
+import googleapiclient.errors
 
 
 class CreatePlaylist:
@@ -29,7 +34,6 @@ class CreatePlaylist:
 
     # Step 3: Create New Playlist
     def create_playlist(self):
-
         query = "https://api.spotify.com/v1/users/{}/playlists".format(self.user_id)
         request_body = json.dumps({
             "name": "Youtube Liked Videos",
@@ -44,26 +48,26 @@ class CreatePlaylist:
         response = requests.post(query, data=request_body, headers=headers)
         response_json = response.json()
 
+        # playlist ID
         return response_json["id"]
 
     # Step 4: Search For Song
-    def get_spotify_url(self, song_name, artist):
-        """Search For the Song"""
+    def get_spotify_uri(self, song_name, artist):
+        # may need this mess with this query
         query = "https://api.spotify.com/v1/search?query=track%3A{}+artist%3A{}&type=track&offset=0&limit=20".format(
             song_name,
-            artist
-        )
-        response = requests.get(
-            query,
-            headers={
-                "Content-Type": "application/json",
-                "Authorization": "Bearer {}".format(spotify_token)
-            }
-        )
+            artist)
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer {}".format(spotify_token)
+        }
+
+        response = requests.get(query, headers=headers)
         response_json = response.json()
         songs = response_json["tracks"]["items"]
+        print(songs)
 
-        # only use the first song
+        # first track
         uri = songs[0]["uri"]
 
         return uri
@@ -74,5 +78,5 @@ class CreatePlaylist:
 
 
 test = CreatePlaylist()
-print(test.get_spotify_url("jungle", "casio"))
+test.get_spotify_uri("Skin", "Dijon")
 
