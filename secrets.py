@@ -1,5 +1,5 @@
 
-spotify_token = "BQB_Ci55QL6A85PcnX8iqkg5MHnHTFG3O_qf8Kha9B5baMMeYFf-YAcxXROr_1Qdrt_ZIT5KKdVvGcfUpRov6JRc96o0DLpa5g5OyvMwm4XQN9llnHPfZDYeQivzWhjXxQm-DS9hsPHc9RqFjQqq8pZ_pkE5CjgpmfrebmHY2UCJt0UQJreiPg"
-spotify_user_id = "caheri.martinez"
+spotify_token = ""
+spotify_user_id = ""
 
 
